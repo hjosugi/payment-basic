@@ -1,0 +1,80 @@
+[
+  {
+    "language": "ts",
+    "demo": "200 {\"mode\": \"commit_timeout\"}\n202 {\"id\": \"cf9a3aae-2f9d-4203-8685-9c9baccb2af6\", \"amount\": 1000, \"currency\": \"JPY\", \"status\": \"UNKNOWN\"}\n202 {\"id\": \"cf9a3aae-2f9d-4203-8685-9c9baccb2af6\", \"amount\": 1000, \"currency\": \"JPY\", \"status\": \"UNKNOWN\"}\n200 {\"mode\": \"success\"}\n200 {\"checked\": 1, \"pending\": 0}\n200 {\"id\": \"cf9a3aae-2f9d-4203-8685-9c9baccb2af6\", \"amount\": 1000, \"currency\": \"JPY\", \"status\": \"SUCCEEDED\"}\n200 {\"charges\": 1, \"posts\": 1}\n",
+    "load": {
+      "requests": 20,
+      "concurrency": 2,
+      "elapsed_seconds": 0.057,
+      "completed_rps": 351.46,
+      "p50_ms": 4.33,
+      "p95_ms": 11.5,
+      "p99_ms": 16.3,
+      "mean_ms": 5.46,
+      "http_statuses": {
+        "201": 20
+      },
+      "payment_states": {
+        "SUCCEEDED": 20
+      }
+    },
+    "settlement": {
+      "run_id": "4dfbe0aa-6cb6-4cd0-8f86-df78368e15be",
+      "issues": [],
+      "local_records": 21,
+      "provider_records": 21
+    }
+  },
+  {
+    "language": "go",
+    "demo": "200 {\"mode\": \"commit_timeout\"}\n202 {\"id\": \"b244e571-454e-444e-800b-06826dba713a\", \"amount\": 1000, \"currency\": \"JPY\", \"status\": \"UNKNOWN\"}\n202 {\"id\": \"b244e571-454e-444e-800b-06826dba713a\", \"amount\": 1000, \"currency\": \"JPY\", \"status\": \"UNKNOWN\"}\n200 {\"mode\": \"success\"}\n200 {\"checked\": 1, \"pending\": 0}\n200 {\"id\": \"b244e571-454e-444e-800b-06826dba713a\", \"amount\": 1000, \"currency\": \"JPY\", \"status\": \"SUCCEEDED\"}\n200 {\"charges\": 1, \"posts\": 1}\n",
+    "load": {
+      "requests": 20,
+      "concurrency": 2,
+      "elapsed_seconds": 0.055,
+      "completed_rps": 362.26,
+      "p50_ms": 2.66,
+      "p95_ms": 17.49,
+      "p99_ms": 20.97,
+      "mean_ms": 5.29,
+      "http_statuses": {
+        "201": 20
+      },
+      "payment_states": {
+        "SUCCEEDED": 20
+      }
+    },
+    "settlement": {
+      "run_id": "6f6a191b-9b18-474c-ab6a-03dd2916de32",
+      "issues": [],
+      "local_records": 21,
+      "provider_records": 21
+    }
+  },
+  {
+    "language": "java",
+    "demo": "200 {\"mode\": \"commit_timeout\"}\n202 {\"id\": \"294e8631-9688-4fdc-94d2-40118b5c85c7\", \"status\": \"UNKNOWN\", \"currency\": \"JPY\", \"amount\": 1000}\n202 {\"id\": \"294e8631-9688-4fdc-94d2-40118b5c85c7\", \"status\": \"UNKNOWN\", \"currency\": \"JPY\", \"amount\": 1000}\n200 {\"mode\": \"success\"}\n200 {\"pending\": 0, \"checked\": 1}\n200 {\"id\": \"294e8631-9688-4fdc-94d2-40118b5c85c7\", \"status\": \"SUCCEEDED\", \"currency\": \"JPY\", \"amount\": 1000}\n200 {\"charges\": 1, \"posts\": 1}\n",
+    "load": {
+      "requests": 20,
+      "concurrency": 2,
+      "elapsed_seconds": 0.06,
+      "completed_rps": 332.71,
+      "p50_ms": 4.6,
+      "p95_ms": 11.88,
+      "p99_ms": 13.09,
+      "mean_ms": 5.72,
+      "http_statuses": {
+        "201": 20
+      },
+      "payment_states": {
+        "SUCCEEDED": 20
+      }
+    },
+    "settlement": {
+      "run_id": "8657bd65-8416-46c6-b716-0a47bc0eeff1",
+      "issues": [],
+      "local_records": 21,
+      "provider_records": 21
+    }
+  }
+]
