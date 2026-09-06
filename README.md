@@ -4,14 +4,14 @@
 
 ## リポジトリ構成
 
-| リポジトリ名 | 内容 |
+| リポジトリ | 内容 |
 | --- | --- |
-| `hjosugi/payment-basic` | この学習ガイド、共通設計、作成・push手順 |
-| `hjosugi/payment-basic-ts` | Node.js 24 / TypeScript / node:sqlite |
-| `hjosugi/payment-basic-go` | Go / net/http / database/sql / modernc.org/sqlite |
-| `hjosugi/payment-basic-java` | Java 21 / virtual threads / HttpClient / SQLite JDBC |
+| [hjosugi/payment-basic](https://github.com/hjosugi/payment-basic) | この学習ガイド、共通設計、複製手順 |
+| [hjosugi/payment-basic-ts](https://github.com/hjosugi/payment-basic-ts) | Node.js 24 / TypeScript / node:sqlite |
+| [hjosugi/payment-basic-go](https://github.com/hjosugi/payment-basic-go) | Go / net/http / database/sql / modernc.org/sqlite |
+| [hjosugi/payment-basic-java](https://github.com/hjosugi/payment-basic-java) | Java 21 / virtual threads / HttpClient / SQLite JDBC |
 
-配布時点ではGitHubへの作成・pushは未実施です。各ディレクトリを独立リポジトリとして作成できる状態にしてあります。実装リポジトリは他のリポジトリへの依存なしで起動・テストできます。
+4リポジトリは2026-09-06にpublicで公開済みです。実装リポジトリは他のリポジトリへの依存なしで起動・テストでき、それぞれGitHub ActionsのCIが通っています。
 
 ## 読む順番
 
@@ -37,23 +37,25 @@
 
 Pythonは共通テスト・模擬Provider・運用スクリプト専用です。決済API本体はそれぞれTypeScript・Go・Javaで実装しています。
 
-## GitHubへ分けて作成する
+## 自分のアカウントへ複製する
+
+`hjosugi`配下の4リポジトリは作成済みです。別のアカウントで同じ構成を作り直す場合に、同梱の`scripts/publish.py`を使います。
 
 GitとGitHub CLIを準備し、`gh auth login`で自分の環境で認証してください。トークンをファイルや会話に貼り付ける必要はありません。
 
-ZIPを展開し、4ディレクトリが並んでいる位置で:
+4ディレクトリが並んでいる位置で:
 
 ```bash
-python3 payment-basic/scripts/publish.py
+python3 payment-basic/scripts/publish.py --owner YOUR-NAME
 ```
 
 まず作成予定コマンドだけを表示します。作成・pushする場合:
 
 ```bash
-python3 payment-basic/scripts/publish.py --owner hjosugi --visibility private --execute
+python3 payment-basic/scripts/publish.py --owner YOUR-NAME --visibility public --execute
 ```
 
-公開する場合は`--visibility public`へ変更します。既存リポジトリがあれば停止し、上書きしません。ネットワークエラーや権限不足でも`gh repo create`が失敗した時点で停止します。4件の作成は単一トランザクションではないため、途中で失敗した場合は作成済みのリポジトリを確認して残りを個別に扱ってください。スクリプトはそれらを削除しません。
+`--visibility`の既定は`private`です。既存リポジトリがあれば停止し、上書きしません。ローカルにremoteが設定済みの場合も停止します。ネットワークエラーや権限不足でも`gh repo create`が失敗した時点で停止します。4件の作成は単一トランザクションではないため、途中で失敗した場合は作成済みのリポジトリを確認して残りを個別に扱ってください。スクリプトはそれらを削除しません。
 
 公式: [gh repo create](https://cli.github.com/manual/gh_repo_create)
 
